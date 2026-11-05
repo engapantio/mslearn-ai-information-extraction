@@ -19,6 +19,14 @@ def main():
 
         formUrl = "https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-information-extraction/main/Labfiles/03-document-intelligence/custom/test1.jpg"
 
+        if not endpoint or not key:
+            raise ValueError(
+                "Set DOCUMENT_INTELLIGENCE_ENDPOINT and DOCUMENT_INTELLIGENCE_KEY in .env"
+            )
+
+        if not model_id:
+            raise ValueError("Set MODEL_ID in .env")
+
         document_analysis_client = DocumentIntelligenceClient(
             endpoint=endpoint, credential=AzureKeyCredential(key)
         )
@@ -30,12 +38,15 @@ def main():
         )
         result = poller.result()
 
-        for idx, document in enumerate(result.documents):
+        for idx, document in enumerate(result.documents or []):
             print("--------Analyzing document #{}--------".format(idx + 1))
             print("Document has type {}".format(document.doc_type))
             print("Document has confidence {}".format(document.confidence))
             print("Document was analyzed by model with ID {}".format(result.model_id))
-            for name, field in document.fields.items():
+            fields = document.fields or {}
+            for name, field in fields.items():
+                if field is None:
+                    continue
                 field_value = field.get("valueString") or field.get("content", "N/A")
                 print("Found field '{}' with value '{}' and with confidence {}".format(name, field_value, field.get("confidence")))
 
@@ -46,4 +57,4 @@ def main():
     print("\nAnalysis complete.\n")
 
 if __name__ == "__main__":
-    main()     
+    main() 
