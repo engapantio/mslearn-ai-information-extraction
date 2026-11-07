@@ -17,6 +17,11 @@ def main():
         query_key = os.getenv('QUERY_KEY')
         index = os.getenv('INDEX_NAME')
 
+        if not search_endpoint or not query_key or not index:
+            raise ValueError(
+                "Set SEARCH_ENDPOINT, QUERY_KEY and INDEX_NAME in .env"
+            )
+
         # Get a search client
         search_client = SearchClient(search_endpoint, index, AzureKeyCredential(query_key))
 
