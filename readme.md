@@ -1,16 +1,48 @@
 # AI-Powered Information Extraction
-<!-- Change the title above as appropriate -->
 
-<!-- Review the notes in the index.md file to set up the repo for GitHub Pages -->
+Hands-on exercises and supporting files for learning how to extract structured information from unstructured content using Azure AI services.
 
-This repo contains exercises and supporting files for Microsoft skilling content.
+This repository supports self-paced learning on [Microsoft Learn](https://learn.microsoft.com) and instructor-led training scenarios.
 
-The exercises may be used in both self-paced skilling experiences on [Microsoft Learn](https://learn.microsoft.com) and in Microsoft authorized instructor-led training.
-<!-- Update the paragraph above with a link to a specific Learning Path or course as appropriate -->
+## What you'll learn
 
-## Information for MCTs
-<!-- You can remove this section if the exercises will not be used to support Microsoft Official Curriculum ILT -->
+- Extract entities, key phrases, and other information from text
+- Use Azure AI Language and related Azure AI services
+- Build practical information-extraction workflows
+- Work with lab files and guided exercises in the `Labfiles` directory
 
-**Are you an MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
+## Repository structure
 
-Any MCT (Microsoft Certified Trainer) can submit a pull request to the code or content in the GitHub repro. Microsoft and the course author will then triage and include content and lab code changes as needed. You can submit bugs, changes, improvement, and ideas. Find a new Azure or Microsoft 365 feature before we have? Submit a new demo!
+| Folder | Purpose |
+|---|---|
+| `Instructions/` | Step-by-step exercise instructions |
+| `Labfiles/` | Starter files, data, and supporting assets for the labs |
+| `.github/` | Repository configuration and workflow files |
+
+## Getting started
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/engapantio/mslearn-ai-information-extraction.git
+   cd mslearn-ai-information-extraction
+   ```
+
+2. Open the relevant exercise in the `Instructions/` folder.
+
+3. Use the matching assets in `Labfiles/` to complete the exercise.
+
+## Prerequisites
+
+- An active Azure subscription or access to an Azure AI resource
+- A supported web browser
+- Basic familiarity with Azure AI services is helpful but not required
+
+## Notes
+
+- Do not commit secrets, API keys, connection strings, or other credentials to this repository.
+- Azure service names, regions, pricing, and available features can change; follow the instructions in the specific exercise for current guidance.
+
+## License
+
+This project is licensed under the terms in [LICENSE](LICENSE).
